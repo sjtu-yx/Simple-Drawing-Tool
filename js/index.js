@@ -48,57 +48,68 @@ window.addEventListener('load', () => {
         pen18.style.backgroundColor = penColor.value;
     })
     //监听画笔的粗细
-    pen.addEventListener('click', () => {
+    pen.addEventListener('click', throttle(() => {
         currentPen = 'pen6';
         penSize = 1;
         drawing.classList.add('choose-pen')
         drawing.classList.remove('choose-eraser')
-    })
-    pen6.addEventListener('click', () => {
+    }, 200))
+    pen6.addEventListener('click', throttle(() => {
         currentPen = 'pen6';
         penSize = 1;
         drawing.classList.add('choose-pen')
         drawing.classList.remove('choose-eraser')
-    })
-    pen12.addEventListener('click', () => {
+    }, 200))
+    pen12.addEventListener('click', throttle(() => {
         currentPen = 'pen12';
         penSize = 6;
         drawing.classList.add('choose-pen')
         drawing.classList.remove('choose-eraser')
-    })
-    pen18.addEventListener('click', () => {
+    }, 200))
+    pen18.addEventListener('click', throttle(() => {
         currentPen = 'pen18';
         penSize = 12;
         drawing.classList.add('choose-pen')
         drawing.classList.remove('choose-eraser')
-    })
+    }, 200))
     //监听橡皮的大小
-    eraser.addEventListener('click', () => {
+    eraser.addEventListener('click', throttle(() => {
         currentPen = 'eraser10';
         penSize = 10;
         drawing.classList.add('choose-eraser')
         drawing.classList.remove('choose-pen')
-    })
-    eraser10.addEventListener('click', () => {
+    }, 200))
+    eraser10.addEventListener('click', throttle(() => {
         currentPen = 'eraser10';
         penSize = 10;
         drawing.classList.add('choose-eraser')
         drawing.classList.remove('choose-pen')
-    })
-    eraser20.addEventListener('click', () => {
+    }, 200))
+    eraser20.addEventListener('click', throttle(() => {
         currentPen = 'eraser20';
         penSize = 20;
         drawing.classList.add('choose-eraser')
         drawing.classList.remove('choose-pen')
-    })
-    eraser30.addEventListener('click', () => {
+    }, 200))
+    eraser30.addEventListener('click', throttle(() => {
         currentPen = 'eraser30';
         penSize = 30;
         drawing.classList.add('choose-eraser')
         drawing.classList.remove('choose-pen')
-    })
+    }, 200))
     //清空画板按钮
-    clear.addEventListener('click', () => {
+    clear.addEventListener('click', throttle(() => {
         drawing.height = drawing.height;
-    })
+    }, 10))
+    //节流函数
+    function throttle (fn, delay) {
+        let timer = null;
+        return () => {
+            if(timer) {return}
+            timer = setTimeout(() => {
+                fn.apply(this, arguments)
+                timer = null;
+            }, delay)
+        }
+    }
 })
