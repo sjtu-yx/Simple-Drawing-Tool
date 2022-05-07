@@ -1,0 +1,220 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background: url(../img/background.jpg) no-repeat;
+    background-size: cover;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 900px;
+    height: 600px;
+}
+header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+header h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    color: rgb(220, 43, 8);
+    text-shadow: 2px 2px 3px rgb(112, 108, 108);
+}
+header .func {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+
+}
+/* 功能区 */
+
+.func {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+.func .pen {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 100px;
+    height: 48px;
+    background: rgba(255, 255, 255, .9);
+    border-radius: 27px;
+}
+.func .pen .pen-img {
+    margin-left: 10px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 18px;
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+.func .pen .pen-img:hover {
+    background-color: rgb(220, 220, 220);
+}
+.pen6 {
+    margin-left: 8px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 4px;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.pen12 {
+    margin-left: 8px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 7px;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.pen18 {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.pen-color {
+    margin-left: 8px;
+    margin-right: 10px;
+    width: 25px;
+    height: 20px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* 橡皮擦区 */
+.func .eraser {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 27px;
+
+}
+.func .eraser .eraser-img {
+    margin-left: 10px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 18px;
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+.func .eraser .eraser-img:hover {
+    background-color: rgb(220, 220, 220);
+}
+.eraser10 {
+    margin-left: 8px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.eraser20 {
+    margin-left: 8px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 11px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.eraser30 {
+    margin-left: 8px;
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgb(255, 120, 10);
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+    width: 60px;
+    height: 40px;
+    border-radius: 20px;
+    color: rgb(105, 105, 105);
+    background-color: rgba(255, 255, 255, .9);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.clear:hover {
+    background-color: rgba(247, 157, 157, 0.9);
+}
+main canvas {
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 7px #333;
+    background-color: white;
+    
+}
+.choose-pen {
+    cursor: url(../img/pen2.png) 2 24, auto;
+}
+.choose-eraser {
+    cursor: url(../img/eraser2.png) 2 24, auto;
+}
+/* 旋转小太阳 */
+@keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+.rotate-sun {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    width: 90px;
+    height: 90px;
+    animation: rotation 8s infinite linear;
+}
+.rotate-sun img {
+    width: 90px;
+    height: 90px;
+}

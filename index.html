@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drawing tool</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>Drawing Tool</h1>
+            <div class="func">
+                <div class="pen">
+                    <div class="pen-img">
+                        <img src="./img/pen1.png" alt="">
+                    </div>
+                    <div class="pen6"></div>
+                    <div class="pen12"></div>
+                    <div class="pen18"></div>
+                    <input type="color" class="pen-color">
+                </div>
+                <div class="eraser">
+                    <div class="eraser-img">
+                        <img src="./img/eraser1.png" alt="">
+                    </div>
+                    <div class="eraser10"></div>
+                    <div class="eraser20"></div>
+                    <div class="eraser30"></div>
+                </div>
+                <div class="clear">Clear</div>
+            </div>
+        </header>
+        <main>
+            <canvas id="drawing" class="choose-pen" width="900px" height="480px"></canvas>
+        </main>
+    </div>
+    <div class="rotate-sun">
+        <img src="./img/sun.png" alt="">
+    </div>
+</body>
+</html>
